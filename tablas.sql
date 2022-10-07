@@ -74,7 +74,7 @@ create table pedidos (  idped number(4) not null,
 			fechaped  date,
 			fechafact date,
 	constraint ipded_primary_key primary key (idped),
-	constraint FK_CODCLI foreign key (codcli) references clientes);
+	constraint FK_CODCLI foreign key (codcli) references clientes)-;
 	
 INSERT INTO PEDIDOS VALUES (0001,000007, '17/11/99', '19/11/99');
 INSERT INTO PEDIDOS VALUES (0002,000006, '18/12/99', '19/12/99');
