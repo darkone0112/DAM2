@@ -1,3 +1,4 @@
+/* Important to do the Reference to the MySQL library copying the path of the MySQL to the References Librarys of each project */
 package JDBC;
 import java.sql.*;
 
