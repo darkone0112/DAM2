@@ -1,3 +1,5 @@
+package JDBC.TryConnectors.src;
+
 import java.sql.*;
 public class App {
     public static void main(String[] args) throws Exception {
@@ -6,7 +8,7 @@ public class App {
             // The MySQL Connector/J library must be on your classpath
             Class.forName("com.mysql.cj.jdbc.Driver");
             // Establish a connection to the database
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "darkone0112", "mpc8md8p78p175du890f");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "VsCode", "2458");
 
             // Create a statement object
             Statement stmt = conn.createStatement();
