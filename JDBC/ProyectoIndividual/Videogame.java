@@ -9,7 +9,7 @@ public class Videogame {
 
     public void loadJDBC() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.out.println("Error loading JDBC driver: " + e);
         }
