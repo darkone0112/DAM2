@@ -131,6 +131,7 @@ public class Videogame {
             } catch (SQLException e) {
                 System.out.println("Error updating videogame: " + e);
             }
+            
         }
     }
     
@@ -155,4 +156,5 @@ public class Videogame {
         }
 
     }
+
 }
