@@ -133,9 +133,9 @@ public class Videogame {
             }
         }
     }
+    
     public void deleteVideogame() {
         JTextField idField = new JTextField();
-    
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(new JLabel("ID:"));
@@ -146,7 +146,6 @@ public class Videogame {
             try {
                 statement = connection.createStatement();
                 int id = Integer.parseInt(idField.getText());
-    
                 String query = "DELETE FROM videogames WHERE id=" + id;
                 statement.executeUpdate(query);
                 System.out.println("Videogame deleted successfully.");
@@ -154,5 +153,6 @@ public class Videogame {
                 System.out.println("Error deleting videogame: " + e);
             }
         }
+
     }
 }
