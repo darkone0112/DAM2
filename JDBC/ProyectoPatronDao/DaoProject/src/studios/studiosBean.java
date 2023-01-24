@@ -176,7 +176,7 @@ public class studiosBean {
                     e.printStackTrace();
                 } */
                 setDateCreation(null);
-                String query = "INSERT INTO studios (name, headquarters, numberWorkers, dateCreation) VALUES ('" + getName() + "', '" + getHeadQuarters() + "', '" + getNumberWorkers() + ", " + getDateCreation() + ")";
+                String query = "INSERT INTO studios (name, headquarters, numberWorkers, dateCreation) VALUES ('" + getName() + "', '" + getHeadQuarters() + "', " + getNumberWorkers() + ", " + getDateCreation() + ")";
                 statement.executeUpdate(query);
                 System.out.println("Videogame added successfully.");
             } catch (SQLException e) {
