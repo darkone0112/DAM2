@@ -33,7 +33,7 @@ VALUES
 
 DROP TABLE studios;
 CREATE TABLE studios (
-    nombre VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
     dateCreation DATE NOT NULL,
     headquarters VARCHAR(255) NOT NULL,
     numberWorkers INT(11) NOT NULL,

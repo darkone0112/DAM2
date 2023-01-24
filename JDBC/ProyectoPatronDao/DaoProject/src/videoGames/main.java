@@ -1,45 +1,41 @@
-package studios;
-
+package videoGames;
+import java.sql.*;
+import javax.swing.*;
+import java.awt.event.*;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class main{
+public class main {
     public static void main(String[] args) {
-        studioInterface DaoObject = studioGallery.getStudioDao();
-        DaoObject.loadJDBC();
-        DaoObject.connect();
-        System.out.println(DaoObject.getConn());
+        // Create a new instance of the Videogame class
+        //will use the dao object to call the methods from the VideogameBean class
+        VideogameInterface videogame = VideogameGallery.getVideogameDao();
+        videogame.loadJDBC();
+        videogame.conectar();
 
         // Create a JFrame to display the menu
-        JFrame frame = new JFrame("Studios Menu");
+        JFrame frame = new JFrame("Videogame Menu");
         frame.setSize(600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (int) ((screenSize.getWidth() - frame.getWidth()) / 2);
         int y = (int) ((screenSize.getHeight() - frame.getHeight()) / 2);
         frame.setLocation(x, y);
-
+        
+        frame.setVisible(true);
         // Create a JPanel to hold the menu options
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
         // Create the menu options
-        JButton displayButton = new JButton("Display Studios");
-        JButton addButton = new JButton("Add Studio");
-        JButton updateButton = new JButton("Update Studio");
-        JButton deleteButton = new JButton("Delete Studio");
+        JButton displayButton = new JButton("Display Videogames");
+        JButton addButton = new JButton("Add Videogame");
+        JButton updateButton = new JButton("Update Videogame");
+        JButton deleteButton = new JButton("Delete Videogame");
 
         // Add the menu options to the panel
         panel.add(displayButton);
@@ -56,43 +52,48 @@ public class main{
         gbc.weighty = 1;
         gbc.anchor = GridBagConstraints.CENTER;
         frame.add(panel, gbc);
-        frame.setVisible(true);
 
         // Create a table model for displaying the videogames
         DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("name");
-        model.addColumn("dateCreation");
-        model.addColumn("headQuarters");
-        model.addColumn("NumberWorkerss");    // Add action listeners for the menu options
-        displayButton.addActionListener(new ActionListener() {
+        model.addColumn("ID");
+        model.addColumn("Title");
+        model.addColumn("Genre");
+        model.addColumn("Studio");
+        model.addColumn("Release Date");
+        model.addColumn("Score");
+        model.addColumn("Size");
+
+        // Add action listeners for the menu options
+        displayButton.addActionListener((ActionListener) new ActionListener(){
             public void actionPerformed(ActionEvent e) {
-                JFrame tableFrame = new JFrame("Studios");
+                JFrame tableFrame = new JFrame("Videogames");
                 tableFrame.setSize(800, 600);
                 JTable table = new JTable(model);
                 JScrollPane scrollPane = new JScrollPane(table);
                 tableFrame.add(scrollPane);
-                DaoObject.displayAllStudios(DaoObject.getConn(), model);
+                videogame.displayData(model);
                 tableFrame.setVisible(true);
             }
         });
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                DaoObject.addStudio(DaoObject.getConn());
-                DaoObject.displayAllStudios(DaoObject.getConn(), model);
+                videogame.addVideogame();
             }
         });
-        deleteButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                DaoObject.deleteStudio(DaoObject.getConn());
-                DaoObject.displayAllStudios(DaoObject.getConn(), model);
-            }
-        });
-        //add update button action listener
+
         updateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                DaoObject.updateStudio(DaoObject.getConn());
-                DaoObject.displayAllStudios(DaoObject.getConn(), model);
+                videogame.updateVideogame();
             }
         });
+
+        deleteButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                videogame.deleteVideogame();
+            }
+        });
+
+        // Display the frame
+        frame.setVisible(true);
     }
 }

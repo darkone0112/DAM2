@@ -19,11 +19,11 @@ import javax.swing.table.DefaultTableModel;
 /**
  * studiosBean
  */
-public class studiosBean {
+public class studiosBean implements studioInterface{
     private String name;
     private String headQuarters;
     private int numberWorkers;
-    private Date dateCreation;
+    private String dateCreation;
     private Connection conn;
     private Statement statement;
     public void loadJDBC() {
@@ -49,7 +49,7 @@ public class studiosBean {
     }
     //constructor with
     //
-    public studiosBean(String name, String headQuarters, int numberWorkers, Date dateCreation,Connection conn) {
+    public studiosBean(String name, String headQuarters, int numberWorkers, String dateCreation,Connection conn) {
         this.name = name;
         this.headQuarters = headQuarters;
         this.numberWorkers = numberWorkers;
@@ -75,10 +75,10 @@ public class studiosBean {
     public void setNumberWorkers(int numberWorkers) {
         this.numberWorkers = numberWorkers;
     }
-    public Date getDateCreation() {
+    public String getDateCreation() {
         return dateCreation;
     }
-    public void setDateCreation(Date dateCreation) {
+    public void setDateCreation(String dateCreation) {
         this.dateCreation = dateCreation;
     }
     //getters and setters for the connection
@@ -166,6 +166,7 @@ public class studiosBean {
                 setName(nameField.getText());
                 setHeadQuarters(headquartersField.getText());
                 setNumberWorkers(Integer.parseInt(numberWorkersField.getText()));
+                setDateCreation(dateCreationField.getText());
                 /* String dateString = getDateCreation().toString();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 Date date = null; */
@@ -175,8 +176,8 @@ public class studiosBean {
                     System.out.println("Error parsing date: " + e);
                     e.printStackTrace();
                 } */
-                setDateCreation(null);
-                String query = "INSERT INTO studios (name, headquarters, numberWorkers, dateCreation) VALUES ('" + getName() + "', '" + getHeadQuarters() + "', " + getNumberWorkers() + ", " + getDateCreation() + ")";
+                java.sql.Date date = java.sql.Date.valueOf(dateCreationField.getText());
+                String query = "INSERT INTO studios (name, headquarters, numberWorkers, dateCreation) VALUES ('" + getName() + "', '" + getHeadQuarters() + "', " + getNumberWorkers() + ", " + "'" + date + "'" + ")";
                 statement.executeUpdate(query);
                 System.out.println("Videogame added successfully.");
             } catch (SQLException e) {
@@ -185,6 +186,59 @@ public class studiosBean {
         
         }
         }
+    //method that delete a studio via GUI
+    public void deleteStudio(Connection conn) {
+        JTextField nameField = new JTextField();
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.add(new JLabel("name:"));
+        panel.add(nameField);
+        int result = JOptionPane.showConfirmDialog(null, panel, "Delete Studio", JOptionPane.OK_CANCEL_OPTION);
+        if (result == JOptionPane.OK_OPTION) {
+            try {
+                statement = conn.createStatement();
+                setName(nameField.getText());
+                String query = "DELETE FROM studios WHERE name = '" + getName() + "'";
+                statement.executeUpdate(query);
+                System.out.println("Studio deleted successfully.");
+            } catch (SQLException e) {
+                System.out.println("Error deleting studio: " + e);
+            }
+        }
     }
+    //method that update a studio via GUI
+    public void updateStudio(Connection conn) {
+        JTextField nameField = new JTextField();
+        JTextField headquartersField = new JTextField();
+        JTextField numberWorkersField = new JTextField();
+        JTextField dateCreationField = new JTextField();
 
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.add(new JLabel("name:"));
+        panel.add(nameField);
+        panel.add(new JLabel("headquarters:"));
+        panel.add(headquartersField);
+        panel.add(new JLabel("numberWorkers:"));
+        panel.add(numberWorkersField);
+        panel.add(new JLabel("dateCreation:"));
+        panel.add(dateCreationField);
+        int result = JOptionPane.showConfirmDialog(null, panel, "Update Studio", JOptionPane.OK_CANCEL_OPTION);
+        if (result == JOptionPane.OK_OPTION) {
+            try {
+                statement = conn.createStatement();
+                setName(nameField.getText());
+                setHeadQuarters(headquartersField.getText());
+                setNumberWorkers(Integer.parseInt(numberWorkersField.getText()));
+                setDateCreation(dateCreationField.getText());
+                java.sql.Date date = java.sql.Date.valueOf(dateCreationField.getText());
+                String query = "UPDATE studios SET headquarters = '" + getHeadQuarters() + "', numberWorkers = " + getNumberWorkers() + ", dateCreation = '" + date + "' WHERE name = '" + getName() + "'";
+                statement.executeUpdate(query);
+                System.out.println("Studio updated successfully.");
+            } catch (SQLException e) {
+                System.out.println("Error updating studio: " + e);
+            }
+        }
+    }
+}
 
