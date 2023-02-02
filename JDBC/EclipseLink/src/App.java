@@ -1,27 +1,27 @@
 import jakarta.persistence.EntityManager;
+import java.util.List;
+import jakarta.persistence.*;
 import jakarta.persistence.EntityManagerFactory;
 public class App {
    public static void main(String[] args) {
-      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("persistenceUnitName");
+      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("persistenceUnit");
       EntityManager entitymanager = emfactory.createEntityManager();
-      
       entitymanager.getTransaction().begin();
       
       // Create and persist a new entity
-      emp emp = new emp();
-      /* employee.setEmpName("John Doe");
-      employee.setSalary(50000); */
-      
-      entitymanager.persist(employee);
-      entitymanager.getTransaction().commit();
-      
-      // Retrieve the entity
-      Employee foundEmployee = entitymanager.find(Employee.class, employee.getEmpId());
-      System.out.println("Employee name: " + foundEmployee.getEmpName());
-      System.out.println("Employee salary: " + foundEmployee.getSalary());
-      
+      List<emp> employees = getAllEmployees(entitymanager);
+      for (emp employee : employees) {
+         System.out.println("Employee name: " + employee.getEname());
+         System.out.println("Employee salary: " + employee.getSal());
+      }
       entitymanager.close();
       emfactory.close();
    }
+   public static List<emp> getAllEmployees(EntityManager entitymanager) {
+      Query query = entitymanager.createQuery("SELECT e FROM emp e");
+      List<emp> employees = query.getResultList();
+      return employees;
+   }
+   
 }
 
