@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sus{
+            color: yellow;;
+            font-size: 3em;;
+            margin-left: 40vw;
+            margin-top: 25vh;
+            border: 3px solid red;
+            width: 300px;
+            text-align: center;
+            background-color: black;
+        }
+        #ap{
+            color: blue;;
+            font-size: 3em;;
+            margin-left: 40vw;
+            margin-top: 25vh;
+            border: 3px solid green;
+            width: 350px;
+            text-align: center;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const asignatura = ["Programacion","Acceso a Datos","SistemasGestion","PSP","Interfaces"]
+        const nota = []
+        let aux = 0;
+        for (i = 0; i < asignatura.length; i++) {
+            nota[i]=window.prompt("Introduzca la nota de la asignatura: " + asignatura[i])
+            document.write("<br/>La nota de " + asignatura[i] + " es de: " + nota[i] + "\n")
+            aux = aux + parseFloat(nota[i]);
+        }
+        let media = aux/asignatura.length
+        document.write("<br/><br/><br/>La nota media de las asignaturas es de: " + media)
+        if (media >= 4.5 && media <= 8) {
+            document.write("<h1 id = ap>APROBADO!!!<h1/>")
+        } else {
+            if (media > 8 && media <= 10) {
+            document.write("<h1 id = ap>Sobresaliente!!!<h1/>")
+            }else {
+                document.write("<h1 id = sus>Suspenso!!!<h1/>")
+            }
+        }
+    
+        /* document.write(nota[0]) */
+    </script>
+
+</body>
+</html>

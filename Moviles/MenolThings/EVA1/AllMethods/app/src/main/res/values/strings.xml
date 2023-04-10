@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AllMethods</string>
+    <string name="TextWelcome">Bienvenido Master</string>
+    <string name="BotonLeer">No pudiste leer?</string>
+</resources>

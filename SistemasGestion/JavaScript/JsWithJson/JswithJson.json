@@ -1,0 +1,42 @@
+{
+    "persona":[
+        {
+            "nombre":"el pepe",
+            "apellido": "apellidopepe",
+            "sexo":"si",
+            "edad": 7,
+            "telefonos": [
+                "632199366",
+                "123456789",
+                "987654321"
+            ],
+            "direccion": {
+                "calle": "Antonio Lopez",
+                "numero": "246",
+                "puerta": "b",
+                "Cp": "28026"
+            },
+            "centros":[
+                "juan de la cierva","mater","fatima"
+            ],
+            "amigos":[
+                {
+                    "nombre":"juan", 
+                    "apellido": "apellidojuan",
+                    "direccion": "ladireccion",
+                    "edad": 7,
+                    "telefono": "632199366"
+                },
+                { 
+                    "nombre":"eduardo", 
+                    "apellido": "apellidoeduardo",
+                    "direccion": "ladireccion",
+                    "edad": 7,
+                    "telefono": "632199366"
+                 }
+
+            ]       
+}
+]
+}   
+

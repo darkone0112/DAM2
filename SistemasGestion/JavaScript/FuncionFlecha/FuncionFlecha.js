@@ -1,0 +1,3 @@
+document.getElementById("saludobtn").addEventListener("click",()=>alert("hola: " + document.getElementById("name").value),false);
+document.getElementById("agebtn").addEventListener("click",()=>alert("La edad sera: "+(parseInt(document.getElementById("age").value)+8).toString()),false);
+document.getElementById("Teambtn").addEventListener("click",()=>alert("Tu equipo es: " + document.getElementById("team").value), false);

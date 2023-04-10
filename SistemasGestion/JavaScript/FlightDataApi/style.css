@@ -1,0 +1,49 @@
+body{
+    background-image: url(https://i.pinimg.com/originals/de/41/53/de415334320dd313b583016db0352e93.jpg);
+}
+img{
+    border-radius: 10%;
+    border: 1px gray solid;;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#all{
+    width: 600px;
+    height: 800px;
+    margin: 0 auto;
+}
+#contenido{
+    margin: 0 auto;
+}
+h3{
+    font-size: 3em;
+    text-align: center;
+}
+#tablaVuelo{
+    visibility: hidden;
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#tablaTelemetria{
+    visibility: hidden;
+    text-align: center;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#tablaDatosTecnicos{
+    visibility: hidden;
+    text-align: center;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#contentTelemetria{
+    width: 400px;
+    height: 200px;
+    border-radius: 20%;
+/*     border: 2px solid aqua;
+ */    margin: 0 auto;
+}

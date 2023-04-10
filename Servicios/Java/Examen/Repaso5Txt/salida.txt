@@ -1,0 +1,7 @@
+___________________________________________
+Se Muestra la cadena por pantalla: 
+hola
+hola
+hola
+hola
+hola

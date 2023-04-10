@@ -1,0 +1,22 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 4048-AEA2
+
+ Directory of C:\Users\D4Rk0n3\Desktop\DAM2\ServiciosProcesos
+
+23/11/2022  01:46    <DIR>          .
+14/09/2022  01:25    <DIR>          ..
+22/11/2022  14:17    <DIR>          .vscode
+23/11/2022  01:48    <DIR>          CdeCo¤oOdioC
+23/11/2022  01:45                 0 ficsalida
+23/11/2022  01:48                 0 ficsalida.txt
+01/10/2022  09:48               134 holaPsp.c
+01/10/2022  09:48            41.934 holaPsp.exe
+01/10/2022  09:48               228 holaPsp.java
+01/10/2022  09:48                20 holaPSP.py
+21/11/2022  22:23    <DIR>          Java
+10/11/2022  13:55    <DIR>          NumerosPrimos
+01/10/2022  09:48                42 probando.txt
+01/10/2022  09:48               636 ServiciosProcesos.code-workspace
+10/11/2022  13:55                15 texto.txt
+               9 File(s)         43.009 bytes
+               6 Dir(s)  65.354.608.640 bytes free

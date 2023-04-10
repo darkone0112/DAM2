@@ -1,0 +1,15 @@
+<?php
+$servername = "localhost";
+$username = "VsCode";
+$password = 2458;
+/* $salt= $json_data["salt"]; */
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=inventario", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  //echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+?> 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="all">
+        <div id="contenido">
+        <form action="">
+            <label for=""><input type="text" id="cod" placeholder="Codigo de Vuelo"></label>
+            <label for=""><input type="checkbox" name="" id="chckImage">Incluir Imagen</label>
+            <label for=""><input type="checkbox" name="" id="chckFlightData">Incluir Datos Tecnicos</label>
+        <br>
+        <input type="button" value="Buscar" id="buscarBtn">
+        </form>
+            <div id="contentDatosVuelo">
+                <Table border="1 black" id="tablaVuelo">
+                    <tr>
+                        <td colspan="4">Datos del Vuelo</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="aerolinea"></td>
+                        <td colspan="2" id="numero"></td>
+                    </tr>
+                    <tr>
+                        <td>Salida:</td>
+                        <td id="salida"></td>
+                        <td>Llegada:</td>
+                        <td id="llegada"></td>
+                    </tr>
+                    <tr>
+                        <td>Hora Salida</td>
+                        <td id="horaSalida"></td>
+                        <td>Hora Llegada</td>
+                        <td id="horaLlegada"></td>
+                    </tr>
+                    <tr>
+                        <td>Terminal</td>
+                        <td id="terminal"></td>
+                        <td>Puerta Embarque</td>
+                        <td id="puerta"></td>
+                    </tr>
+                    <tr>
+                        <td>Estado</td>
+                        <td id="estado" colspan="3"></td>
+                    </tr>
+                </Table>
+            </div>
+
+            <img src="" alt="" id="imagen">
+            <div id="contentDatosTecnicos">
+                <table border="1 solid" id="tablaDatosTecnicos">
+                    <tr>
+                        <td colspan="4">Datos Tecnicos</td>
+                    </tr>
+                    <tr>
+                        <td>Aeronave</td>
+                        <td id="modelo"></td>
+                        <td>Matricula</td>
+                        <td id="matricula"></td>
+                    </tr>
+                    <tr>
+                        <td>Serie</td>
+                        <td id="serie"></td>
+                        <td>Tipo</td>
+                        <td id="tipo"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="contentTelemetria">
+                <!-- <h3>Telemetria</h3> -->
+                <table border="1 black" id="tablaTelemetria">
+                    <tr>
+                        <td>Distancia</td>
+                        <td>Altitud</td>
+                        <td>Latitud</td>
+                        <td>Longitud</td>
+                    </tr>
+                    <tr>
+                        <td id="altitud"></td>
+                        <td id="velocidad"></td>
+                        <td id="latitud"></td>
+                        <td id="longitud"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="proyectoApi.js"></script>
+</body>
+</html>

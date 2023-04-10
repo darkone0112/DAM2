@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/LBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:backgroundTint="#FF0000"
+        android:text="Kebap" />
+
+    <Button
+        android:id="@+id/CBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:backgroundTint="#9C27B0"
+        android:text="es" />
+    <Button
+        android:id="@+id/RBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Sagrado"
+        android:layout_weight="2"
+        android:backgroundTint="#FFF000"/>
+</LinearLayout>

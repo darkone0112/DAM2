@@ -1,0 +1,147 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+<<<<<<< HEAD
+            "name": "Launch primos",
+            "request": "launch",
+            "mainClass": "primos",
+            "projectName": "ServiciosProcesos_f6067f0d"
+=======
+            "name": "Launch HelloSockets",
+            "request": "launch",
+            "mainClass": "Sockets.HelloSockets",
+            "projectName": "ServiciosProcesos_bccab191"
+        },
+        {
+            "type": "java",
+            "name": "Launch carreraMain",
+            "request": "launch",
+            "mainClass": "carreraMain",
+            "projectName": "ServiciosProcesos_db3f9b6c"
+>>>>>>> c511c9d8873dfaf60f53609fcef0d794c714d203
+        },
+        {
+            "type": "java",
+            "name": "Launch ThreadChildFatherMain",
+            "request": "launch",
+            "mainClass": "ThreadChildFatherMain",
+            "projectName": "ServiciosProcesos_f6067f0d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Reloj",
+            "request": "launch",
+            "mainClass": "Java.Examen.RelojContador.Reloj",
+            "projectName": "ServiciosProcesos_f6067f0d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Repaso5TxtMain",
+            "request": "launch",
+            "mainClass": "Java.Examen.Repaso5Txt.Repaso5TxtMain",
+            "projectName": "ServiciosProcesos_f6067f0d"
+        },
+        {
+            "type": "java",
+            "name": "Launch repaso5Main",
+            "request": "launch",
+            "mainClass": "Java.Examen.Repaso5.repaso5Main",
+            "projectName": "ServiciosProcesos_f6067f0d"
+        },
+        {
+            "type": "java",
+            "name": "Launch repaso4main",
+            "request": "launch",
+            "mainClass": "Java.Examen.Repaso4.repaso4main",
+            "projectName": "ServiciosProcesos_f6067f0d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ejecutor",
+            "request": "launch",
+            "mainClass": "Java.Examen.chunguisimo.ejecutor",
+            "projectName": "ServiciosProcesos_f6067f0d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProcessMac",
+            "request": "launch",
+            "mainClass": "Java.Examen.ProcessMac.ProcessMac",
+            "projectName": "ServiciosProcesos_f6067f0d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExecuteProcessBuilderFromJava",
+            "request": "launch",
+            "mainClass": "Java.Examen.ExecuteProcessBuilderFromJava.ExecuteProcessBuilderFromJava",
+            "projectName": "ServiciosProcesos_db3f9b6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProcessBuilderej",
+            "request": "launch",
+            "mainClass": "Java.Examen.ProcessBuilderej.ProcessBuilderej",
+            "projectName": "ServiciosProcesos_db3f9b6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": "ServiciosProcesos_bccab191"
+        },
+        {
+            "type": "java",
+            "name": "Launch ej5",
+            "request": "launch",
+            "mainClass": "ej5",
+            "projectName": "ServiciosProcesos_db3f9b6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ej4_2",
+            "request": "launch",
+            "mainClass": "ej4_2",
+            "projectName": "ServiciosProcesos_db3f9b6c"
+        },
+        {
+            "type": "java",
+            "name": "Launch ej4",
+            "request": "launch",
+            "mainClass": "ej4",
+            "projectName": "ServiciosProcesos_db3f9b6c"
+        },
+        {
+            "name": "C/C++ Runner: Debug Session",
+            "type": "cppdbg",
+            "request": "launch",
+            "args": [],
+            "stopAtEntry": false,
+            "externalConsole": true,
+            "cwd": "c:/Users/D4Rk0n3/Documents/ServiciosProcesos",
+            "program": "c:/Users/D4Rk0n3/Documents/ServiciosProcesos/build/Debug/outDebug",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/MinGW/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        }
+    ]
+}
