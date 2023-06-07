@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de Precios</h1>
+    <p>Ingrese el código del producto</p>
+    <form action="">
+        <input type="text" name="itemCode" id="itemCode">
+        <input type="submit" value="Añadir" id="add">
+        <input type="reset" value="Limpiar" id="reset">
+    </form>
+    <p id="result"></p>
+    <ul id="ticket">s
+        <li></li>
+    </ul>
+    <p id="total"></p>
+    <script>
+        const addBtn = document.getElementById("add");
+        const resetBtn = document.getElementById("reset");
+        addBtn.addEventListener("click", add, false);
+        function add(){
+            let items= [
+                {code: "item1", price: 10},
+                {code: "item2", price: 20},
+                {code: "item3", price: 30},
+                {code: "item4", price: 40},
+                {code: "item5", price: 50}
+            ]
+            let isin = false;
+            let itemCode = document.getElementById("itemCode").value;
+            log(itemCode);
+            for (let i; i<items.length; i++){
+                if (itemCode == items[i].code){
+                    isin = true;
+                }else{
+                    isin = false;
+                }
+                log
+            }
+            if (isin == true){
+                document.getElementByid("ticket").appendChild("<li>Item 1:"+ String(items[0].price) +"</li>");
+            }else{
+                alert("El código ingresado no es válido");
+            }     
+        }
+    </script>
+</body>
+</html>
