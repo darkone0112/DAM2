@@ -9,19 +9,19 @@
 <body>
     <h1>Calculadora de Precios</h1>
     <p>Ingrese el código del producto</p>
-    <form action="">
-        <input type="text" name="itemCode" id="itemCode">
-        <input type="submit" value="Añadir" id="add">
-        <input type="reset" value="Limpiar" id="reset">
-    </form>
+    <input type="text" name="itemCode" id="itemCode">
+    <input type="submit" value="Añadir" id="add">
+    <input type="reset" value="Limpiar" id="reset">
     <p id="result"></p>
-    <ul id="ticket">s
-        <li></li>
+    <ul id="ticket">
+
     </ul>
+    <h1 id="total"></h1>
     <p id="total"></p>
     <script>
         const addBtn = document.getElementById("add");
         const resetBtn = document.getElementById("reset");
+        let total = 0;
         addBtn.addEventListener("click", add, false);
         function add(){
             let items= [
@@ -31,19 +31,26 @@
                 {code: "item4", price: 40},
                 {code: "item5", price: 50}
             ]
+            console.log("Hello world!");
+            let cursor = 0;
             let isin = false;
             let itemCode = document.getElementById("itemCode").value;
-            log(itemCode);
-            for (let i; i<items.length; i++){
+            let i = 0;
+            console.log(itemCode);
+            for (i; i<items.length; i++){
                 if (itemCode == items[i].code){
                     isin = true;
-                }else{
-                    isin = false;
+                    cursor = i;
                 }
-                log
+                console.log(isin);
             }
             if (isin == true){
-                document.getElementByid("ticket").appendChild("<li>Item 1:"+ String(items[0].price) +"</li>");
+                //alert("El código ingresado es válido");
+                let li = document.createElement("li");
+                li.innerHTML = items[cursor].code + " - " + items[cursor].price;
+                total += items[cursor].price;
+                document.getElementById("ticket").appendChild(li);
+                document.getElementById("total").innerHTML = "Total: " + total;
             }else{
                 alert("El código ingresado no es válido");
             }     

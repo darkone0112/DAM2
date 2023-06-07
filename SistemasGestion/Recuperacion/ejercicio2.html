@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let nota
+        do{
+            nota  = prompt("Ingrese su nota");
+            nota = parseInt(nota);
+            if (nota >= 0 && nota <= 10 ){
+                if (nota < 4){
+                    alert("Desaprobado");
+                }else if (nota >= 4 && nota < 6){
+                    alert("Aprobado");
+                }else if (nota >= 6 && nota < 8){
+                    alert("Bueno");
+                }else if (nota >= 8 && nota < 10){
+                    alert("Muy bueno");
+                }else if (nota == 10){
+                    alert("Excelente");
+                }
+            }else{
+                if (nota = -1){
+                    alert("Fin del programa");
+                }else{
+                    alert("Nota inválida");
+                }
+            }
+        }while(nota != -1)
+
+    </script>
+</body>
+</html>
