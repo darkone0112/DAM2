@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //numerci array with 3 positions
+        let array = [0,0,0];
+        for (let i = 0; i < array.length; i++) {
+            let randomNumber;
+            do{
+                randomNumber = Math.floor(Math.random() * 5);
+            }while(array.includes(randomNumber));
+            array[i] = randomNumber;
+        }
+        for (let i = 0; i < array.length; i++) {
+            document.write(array[i] + "<br>");
+        }
+    </script>
+</body>
+</html>

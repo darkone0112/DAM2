@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const personas = [];
+        let array = [];
+        for(let i=0; i<3; i++){
+            let nombre = prompt("Ingrese su nombre");
+            let edad = prompt("Ingrese su edad");
+
+            personas.push({
+                nombre: nombre,
+                edad: parseInt(edad)
+            });
+        }
+        for(let i=0; i<personas.length; i++){
+            array.push(personas[i].edad);
+        }
+        let max = Math.max(...array);
+        let position = array.indexOf(max);
+        alert("La persona con mayor edad es: " + personas[position].nombre + " con " + personas[position].edad + " años");
+    </script>
+</body>
+</html>

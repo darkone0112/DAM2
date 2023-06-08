@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let width = prompt("Ingrese el ancho de la tabla");
+        let height = prompt("Ingrese el alto de la tabla");
+        number = width * height;
+        document.write("<table border = '1'>");
+        for(let i = 1; i<=height;i++){
+            document.write("<tr>");
+            for(j = 1; j<=width;j++){
+                document.write("<td>" + number-- + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>
